@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+</head>
+<body>
+
+    {% include "layouts/partials/header.html" %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include "layouts/partials/footer.html" %}
+
+</body>
+</html>
