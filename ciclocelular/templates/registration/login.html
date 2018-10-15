@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Iniciar sesion{% endblock %}
+
+{% block content %}
+	<h3>Iniciar sesion</h3>
+	<form action="/login/" method="post">
+	    {% csrf_token %}
+	    {% if next %}<input type="hidden" name="next" value="{{ next }}"/>{% endif %}
+	    <input type="text" id="username" name="username" placeholder="Usuario" />
+	    <input type="password" id="password" name="password" placeholder="Contraseña" />
+	    <input type="submit" name="access" value="Acceder" />
+	</form>
+{% endblock %}

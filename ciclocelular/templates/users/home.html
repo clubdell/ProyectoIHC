@@ -3,5 +3,17 @@
 {% block title %}Bienvenido{% endblock %}
 
 {% block content %}
-<h1>En construccion</h1>
+
+{% if messages %}{% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %}{% endif %}
+
+{% if user.is_authenticated %}
+<h3>Bienvenido {{ user.first_name }}</h3>
+<a href="/logout">Salir</a>
+{% else %}
+<h3>Bienvenido</h3>
+<a href="/login">Iniciar sesion</a>
+{% endif %}
+
 {% endblock %}
